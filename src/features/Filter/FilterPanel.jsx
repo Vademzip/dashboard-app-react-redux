@@ -2,8 +2,8 @@ import {Badge} from 'UI/Badge';
 import {Card} from 'UI/Card';
 import {Stack} from 'UI/Stack';
 import {useDispatch, useSelector} from "react-redux";
-import {selectFilters} from "../store/filters/filterSelector";
-import {CLEAR_FILTER, clearFilter, removeFilter} from "../store/filters/filterActions";
+import {clearFilter, removeFilter} from "./filter-slice";
+import {selectFilters} from "./filter-slice";
 
 
 const FilterPanel = () => {
@@ -25,7 +25,7 @@ const FilterPanel = () => {
                 </Stack>
 
                 <button className='link'
-                        onClick={() => dispatch(clearFilter)}
+                        onClick={() => dispatch(clearFilter())}
                 >Clear</button>
             </div>
         </Card>
